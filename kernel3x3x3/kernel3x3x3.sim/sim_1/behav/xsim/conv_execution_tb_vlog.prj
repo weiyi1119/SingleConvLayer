@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../kernel3x3x3.srcs/sources_1/new/conv_execution.v" \
+"../../../../kernel3x3x3.srcs/sources_1/new/multiply_add.v" \
+"../../../../kernel3x3x3.srcs/sim_1/new/conv_execution_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

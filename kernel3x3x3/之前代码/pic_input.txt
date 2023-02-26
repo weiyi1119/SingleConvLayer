@@ -1,0 +1,31 @@
+module pic_input(
+    clk,
+    rstn,
+    pic_data,
+    pic_go,
+    pic_done
+    );
+
+    input  wire clk,rstn;
+    input  wire pic_go;
+    output reg pic_done;
+    output reg [15:0]pic_data;//每一个像素点
+
+    reg[7:0]content[0:25];//5*5=25像素，每个像素为0~2^7=0~255
+    reg work_en;
+    /*控制使能信号work_en*/
+    always @(posedge clk or negedge rstn) begin
+        if(!rstn)
+            work_en<=0;
+        else if(pic_go)
+            work_en<=1;
+        else if(pic_done)
+            work_en<=0;
+        else
+            work_en<=work_en;
+    end
+
+
+
+
+endmodule

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tfgg484-2" LaunchTime="1676125348">
+  <File Type="PA-TCL" Name="single_layer_conv.tcl"/>
+  <File Type="BITSTR-BMM" Name="single_layer_conv_bd.bmm"/>
+  <File Type="REPORTS-TCL" Name="single_layer_conv_reports.tcl"/>
+  <File Type="OPT-DCP" Name="single_layer_conv_opt.dcp"/>
+  <File Type="OPT-DRC" Name="single_layer_conv_drc_opted.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="single_layer_conv_incremental_reuse_pre_placed.rpt"/>
+  <File Type="OPT-HWDEF" Name="single_layer_conv.hwdef"/>
+  <File Type="PWROPT-DCP" Name="single_layer_conv_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="single_layer_conv_placed.dcp"/>
+  <File Type="BG-BGN" Name="single_layer_conv.bgn"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="single_layer_conv_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="single_layer_conv.bin"/>
+  <File Type="PHYSOPT-DCP" Name="single_layer_conv_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="single_layer_conv.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="single_layer_conv_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="single_layer_conv_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="single_layer_conv_routed_bb.dcp"/>
+  <File Type="BITSTR-LTX" Name="single_layer_conv.ltx"/>
+  <File Type="BITSTR-MMI" Name="single_layer_conv.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="single_layer_conv.sysdef"/>
+  <File Type="ROUTE-TIMING-PB" Name="single_layer_conv_timing_summary_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="single_layer_conv_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="single_layer_conv_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="single_layer_conv.bit"/>
+  <File Type="BITSTR-RBT" Name="single_layer_conv.rbt"/>
+  <File Type="BITSTR-NKY" Name="single_layer_conv.nky"/>
+  <File Type="BG-DRC" Name="single_layer_conv.drc"/>
+  <File Type="RDI-RDI" Name="single_layer_conv.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/conv_execution.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/conv_result_channel_combination.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/filter_distribution.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/multiply_add.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pic_window_distribution.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/single_layer_conv.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="single_layer_conv"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="multiplier"/>
+</GenRun>

@@ -1,0 +1,569 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Feb 25 10:28:21 2023
+# Process ID: 3104
+# Current directory: D:/FPGACode/XilinxProject/kernel3x3x3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3736 D:\FPGACode\XilinxProject\kernel3x3x3\kernel3x3x3.xpr
+# Log file: D:/FPGACode/XilinxProject/kernel3x3x3/vivado.log
+# Journal file: D:/FPGACode/XilinxProject/kernel3x3x3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.xpr
+INFO: [Project 1-313] Project file moved from 'D:/FPGACode/kernel3x3x3' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 790.406 ; gain = 148.090
+update_compile_order -fileset sources_1
+close [ open D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v w ]
+add_files D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sim_1/new/bias_distrbution_tb.v w ]
+add_files -fileset sim_1 D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sim_1/new/bias_distrbution_tb.v
+update_compile_order -fileset sim_1
+set_property top bias_distribution_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'bias_distribution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj bias_distribution_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bias_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sim_1/new/bias_distrbution_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bias_distribution_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2b571d4076eb4c39bf484877dd7dacf0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot bias_distribution_tb_behav xil_defaultlib.bias_distribution_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" Line 1. Module bias_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bias_distribution(H=4,W=4)
+Compiling module xil_defaultlib.bias_distribution_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot bias_distribution_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim/xsim.dir/bias_distribution_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Feb 25 11:13:33 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "bias_distribution_tb_behav -key {Behavioral:sim_1:Functional:bias_distribution_tb} -tclbatch {bias_distribution_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source bias_distribution_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'bias_distribution_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 915.660 ; gain = 2.602
+relaunch_sim
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'bias_distribution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj bias_distribution_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bias_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sim_1/new/bias_distrbution_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bias_distribution_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2b571d4076eb4c39bf484877dd7dacf0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot bias_distribution_tb_behav xil_defaultlib.bias_distribution_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" Line 1. Module bias_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bias_distribution(H=4,W=4)
+Compiling module xil_defaultlib.bias_distribution_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot bias_distribution_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 920.715 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'bias_distribution_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj bias_distribution_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bias_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sim_1/new/bias_distrbution_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bias_distribution_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2b571d4076eb4c39bf484877dd7dacf0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot bias_distribution_tb_behav xil_defaultlib.bias_distribution_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" Line 1. Module bias_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bias_distribution(H=4,W=4)
+Compiling module xil_defaultlib.bias_distribution_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot bias_distribution_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property top single_layer_conv_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'single_layer_conv_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj single_layer_conv_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conv_execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conv_result_channel_combination
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/filter_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module filter_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiclk_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiply_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/pic_window_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pic_window_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module single_layer_conv
+INFO: [VRFC 10-2458] undeclared symbol distriBias, assumed default net type wire [D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v:92]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sim_1/new/single_layer_conv_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module single_layer_conv_tb
+"xvhdl --incr --relax -prj single_layer_conv_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/sim/multiplier.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'multiplier'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2b571d4076eb4c39bf484877dd7dacf0 --incr --debug typical --relax --mt 2 -L xbip_utils_v3_0_9 -L xbip_pipe_v3_0_5 -L xbip_bram18k_v3_0_5 -L mult_gen_v12_0_14 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot single_layer_conv_tb_behav xil_defaultlib.single_layer_conv_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 72 for port 'distriBias' [D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v:92]
+WARNING: [VRFC 10-3091] actual bit length 217 differs from formal bit length 288 for port 'initialConvResult' [D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v:109]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v" Line 1. Module single_layer_conv(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/filter_distribution.v" Line 1. Module filter_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/pic_window_distribution.v" Line 1. Module pic_window_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" Line 1. Module bias_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v" Line 1. Module conv_result_channel_combination(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package mult_gen_v12_0_14.mult_gen_v12_0_14_viv_comp
+Compiling package xbip_utils_v3_0_9.xbip_utils_v3_0_9_pkg
+Compiling package mult_gen_v12_0_14.mult_gen_v12_0_14_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package unisim.vcomponents
+Compiling package mult_gen_v12_0_14.dsp_pkg
+Compiling module xil_defaultlib.filter_distribution(H=4,W=4)
+Compiling module xil_defaultlib.pic_window_distribution(H=4,W=4)
+Compiling architecture xilinx of entity mult_gen_v12_0_14.delay_line [\delay_line(c_xdevicefamily="art...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.op_resize [\op_resize(ai_width=4,bi_width=8...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.dsp [\dsp(c_xdevicefamily="artix7",c_...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.mult_gen_v12_0_14_viv [\mult_gen_v12_0_14_viv(c_verbosi...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.mult_gen_v12_0_14 [\mult_gen_v12_0_14(c_xdevicefami...]
+Compiling architecture multiplier_arch of entity xil_defaultlib.multiplier [multiplier_default]
+Compiling module xil_defaultlib.multiply_add
+Compiling module xil_defaultlib.conv_execution
+Compiling module xil_defaultlib.bias_distribution(H=4,W=4)
+Compiling module xil_defaultlib.multiclk_adder(H=4,W=4)
+Compiling module xil_defaultlib.conv_result_channel_combination(...
+Compiling module xil_defaultlib.single_layer_conv(H=4,W=4)
+Compiling module xil_defaultlib.single_layer_conv_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot single_layer_conv_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim/xsim.dir/single_layer_conv_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Feb 25 11:24:50 2023...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 925.562 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "single_layer_conv_tb_behav -key {Behavioral:sim_1:Functional:single_layer_conv_tb} -tclbatch {single_layer_conv_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source single_layer_conv_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'single_layer_conv_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 940.938 ; gain = 15.375
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/single_layer_conv_tb/single_layer_conv_dut/distriKernel}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/single_layer_conv_tb/single_layer_conv_dut/distriField}} 
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/single_layer_conv_tb/single_layer_conv_dut/distriBias}} 
+relaunch_sim
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'single_layer_conv_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj single_layer_conv_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bias_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conv_execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conv_result_channel_combination
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/filter_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module filter_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiclk_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiply_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/pic_window_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pic_window_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module single_layer_conv
+INFO: [VRFC 10-2458] undeclared symbol distriBias, assumed default net type wire [D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v:92]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sim_1/new/single_layer_conv_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module single_layer_conv_tb
+"xvhdl --incr --relax -prj single_layer_conv_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2b571d4076eb4c39bf484877dd7dacf0 --incr --debug typical --relax --mt 2 -L xbip_utils_v3_0_9 -L xbip_pipe_v3_0_5 -L xbip_bram18k_v3_0_5 -L mult_gen_v12_0_14 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot single_layer_conv_tb_behav xil_defaultlib.single_layer_conv_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 72 for port 'distriBias' [D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v:92]
+WARNING: [VRFC 10-3091] actual bit length 217 differs from formal bit length 288 for port 'initialConvResult' [D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v:109]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v" Line 1. Module single_layer_conv(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/filter_distribution.v" Line 1. Module filter_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/pic_window_distribution.v" Line 1. Module pic_window_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" Line 1. Module bias_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v" Line 1. Module conv_result_channel_combination(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package mult_gen_v12_0_14.mult_gen_v12_0_14_viv_comp
+Compiling package xbip_utils_v3_0_9.xbip_utils_v3_0_9_pkg
+Compiling package mult_gen_v12_0_14.mult_gen_v12_0_14_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package unisim.vcomponents
+Compiling package mult_gen_v12_0_14.dsp_pkg
+Compiling module xil_defaultlib.filter_distribution(H=4,W=4)
+Compiling module xil_defaultlib.pic_window_distribution(H=4,W=4)
+Compiling architecture xilinx of entity mult_gen_v12_0_14.delay_line [\delay_line(c_xdevicefamily="art...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.op_resize [\op_resize(ai_width=4,bi_width=8...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.dsp [\dsp(c_xdevicefamily="artix7",c_...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.mult_gen_v12_0_14_viv [\mult_gen_v12_0_14_viv(c_verbosi...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.mult_gen_v12_0_14 [\mult_gen_v12_0_14(c_xdevicefami...]
+Compiling architecture multiplier_arch of entity xil_defaultlib.multiplier [multiplier_default]
+Compiling module xil_defaultlib.multiply_add
+Compiling module xil_defaultlib.conv_execution
+Compiling module xil_defaultlib.bias_distribution(H=4,W=4)
+Compiling module xil_defaultlib.multiclk_adder(H=4,W=4)
+Compiling module xil_defaultlib.conv_result_channel_combination(...
+Compiling module xil_defaultlib.single_layer_conv(H=4,W=4)
+Compiling module xil_defaultlib.single_layer_conv_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot single_layer_conv_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1327.027 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1327.027 ; gain = 0.000
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:16 . Memory (MB): peak = 1327.027 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'single_layer_conv_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj single_layer_conv_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bias_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conv_execution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conv_result_channel_combination
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/filter_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module filter_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiclk_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiply_add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/pic_window_distribution.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pic_window_distribution
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module single_layer_conv
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sim_1/new/single_layer_conv_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module single_layer_conv_tb
+"xvhdl --incr --relax -prj single_layer_conv_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2b571d4076eb4c39bf484877dd7dacf0 --incr --debug typical --relax --mt 2 -L xbip_utils_v3_0_9 -L xbip_pipe_v3_0_5 -L xbip_bram18k_v3_0_5 -L mult_gen_v12_0_14 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot single_layer_conv_tb_behav xil_defaultlib.single_layer_conv_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v" Line 1. Module single_layer_conv(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/filter_distribution.v" Line 1. Module filter_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/pic_window_distribution.v" Line 1. Module pic_window_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v" Line 1. Module conv_execution doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v" Line 1. Module multiply_add doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/bias_distribution.v" Line 1. Module bias_distribution(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v" Line 1. Module conv_result_channel_combination(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGACode/XilinxProject/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiclk_adder.v" Line 1. Module multiclk_adder(H=4,W=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package mult_gen_v12_0_14.mult_gen_v12_0_14_viv_comp
+Compiling package xbip_utils_v3_0_9.xbip_utils_v3_0_9_pkg
+Compiling package mult_gen_v12_0_14.mult_gen_v12_0_14_pkg
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package unisim.vcomponents
+Compiling package mult_gen_v12_0_14.dsp_pkg
+Compiling module xil_defaultlib.filter_distribution(H=4,W=4)
+Compiling module xil_defaultlib.pic_window_distribution(H=4,W=4)
+Compiling architecture xilinx of entity mult_gen_v12_0_14.delay_line [\delay_line(c_xdevicefamily="art...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.op_resize [\op_resize(ai_width=4,bi_width=8...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.dsp [\dsp(c_xdevicefamily="artix7",c_...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.mult_gen_v12_0_14_viv [\mult_gen_v12_0_14_viv(c_verbosi...]
+Compiling architecture xilinx of entity mult_gen_v12_0_14.mult_gen_v12_0_14 [\mult_gen_v12_0_14(c_xdevicefami...]
+Compiling architecture multiplier_arch of entity xil_defaultlib.multiplier [multiplier_default]
+Compiling module xil_defaultlib.multiply_add
+Compiling module xil_defaultlib.conv_execution
+Compiling module xil_defaultlib.bias_distribution(H=4,W=4)
+Compiling module xil_defaultlib.multiclk_adder(H=4,W=4)
+Compiling module xil_defaultlib.conv_result_channel_combination(...
+Compiling module xil_defaultlib.single_layer_conv(H=4,W=4)
+Compiling module xil_defaultlib.single_layer_conv_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot single_layer_conv_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1327.027 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1327.027 ; gain = 0.000
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 1327.027 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Feb 25 11:36:36 2023...

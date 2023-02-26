@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v" \
+"../../../../kernel3x3x3.srcs/sim_1/new/conv_result_channel_combination_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../kernel3x3x3.srcs/sources_1/ip/multiplier/sim/multiplier.vhd" \
+
+nosort

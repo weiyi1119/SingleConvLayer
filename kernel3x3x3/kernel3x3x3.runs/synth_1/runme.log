@@ -1,0 +1,1495 @@
+
+*** Running vivado
+    with args -log single_layer_conv.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source single_layer_conv.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source single_layer_conv.tcl -notrace
+Command: synth_design -top single_layer_conv -part xc7a35tfgg484-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22204 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 465.727 ; gain = 98.840
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'single_layer_conv' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v:1]
+	Parameter DW bound to: 8 - type: integer 
+	Parameter FDW bound to: 4 - type: integer 
+	Parameter CH bound to: 3 - type: integer 
+	Parameter H bound to: 6 - type: integer 
+	Parameter W bound to: 6 - type: integer 
+	Parameter F bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'conv_execution' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:1]
+	Parameter F bound to: 3 - type: integer 
+	Parameter FDW bound to: 4 - type: integer 
+	Parameter DW bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'multiply_add' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v:1]
+	Parameter F bound to: 3 - type: integer 
+	Parameter FDW bound to: 4 - type: integer 
+	Parameter DW bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'multiplier' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.runs/synth_1/.Xil/Vivado-21268-LAPTOP-GGK9FJFQ/realtime/multiplier_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (1#1) [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.runs/synth_1/.Xil/Vivado-21268-LAPTOP-GGK9FJFQ/realtime/multiplier_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'multiply_add' (2#1) [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/multiply_add.v:1]
+WARNING: [Synth 8-689] width (18) of port connection 'result' does not match port width (19) of module 'multiply_add' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:34]
+WARNING: [Synth 8-5788] Register convDone_reg in module conv_execution is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'conv_execution' (3#1) [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:1]
+INFO: [Synth 8-6157] synthesizing module 'filter_distribution' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/filter_distribution.v:1]
+	Parameter FDW bound to: 4 - type: integer 
+	Parameter CH bound to: 3 - type: integer 
+	Parameter H bound to: 6 - type: integer 
+	Parameter W bound to: 6 - type: integer 
+	Parameter F bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'filter_distribution' (4#1) [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/filter_distribution.v:1]
+INFO: [Synth 8-6157] synthesizing module 'pic_window_distribution' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/pic_window_distribution.v:1]
+	Parameter DW bound to: 8 - type: integer 
+	Parameter CH bound to: 3 - type: integer 
+	Parameter H bound to: 6 - type: integer 
+	Parameter W bound to: 6 - type: integer 
+	Parameter F bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pic_window_distribution' (5#1) [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/pic_window_distribution.v:1]
+INFO: [Synth 8-6157] synthesizing module 'conv_result_channel_combination' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v:1]
+	Parameter DW bound to: 8 - type: integer 
+	Parameter FDW bound to: 4 - type: integer 
+	Parameter CH bound to: 3 - type: integer 
+	Parameter H bound to: 6 - type: integer 
+	Parameter W bound to: 6 - type: integer 
+	Parameter F bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'conv_result_channel_combination' (6#1) [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'single_layer_conv' (7#1) [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/single_layer_conv.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 521.461 ; gain = 154.574
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 521.461 ; gain = 154.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 521.461 ; gain = 154.574
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tfgg484-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[0].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[0].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[1].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[1].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[2].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[2].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[3].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[3].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[4].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[4].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[5].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[5].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[6].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[6].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[7].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[7].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[8].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[8].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[9].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[9].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[10].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[10].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[11].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[11].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[12].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[12].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[13].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[13].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[14].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[14].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[15].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[15].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[16].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[16].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[17].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[17].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[18].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[18].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[19].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[19].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[20].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[20].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[21].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[21].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[22].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[22].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[23].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[23].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[24].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[24].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[25].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[25].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[26].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[26].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[27].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[27].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[28].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[28].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[29].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[29].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[30].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[30].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[31].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[31].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[32].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[32].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[33].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[33].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[34].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[34].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[35].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[35].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[36].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[36].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[37].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[37].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[38].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[38].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[39].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[39].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[40].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[40].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[41].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[41].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[42].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[42].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[43].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[43].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[44].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[44].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[45].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[45].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[46].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[46].conv_execution_dut/multiply_add_dut/mult'
+Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[47].conv_execution_dut/multiply_add_dut/mult'
+Finished Parsing XDC File [d:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/ip/multiplier/multiplier/multiplier_in_context.xdc] for cell 'genblk1[47].conv_execution_dut/multiply_add_dut/mult'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 864.965 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 864.965 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 864.965 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 864.965 ; gain = 498.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tfgg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 864.965 ; gain = 498.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for \genblk1[0].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[1].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[2].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[3].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[4].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[5].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[6].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[7].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[8].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[9].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[10].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[11].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[12].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[13].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[14].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[15].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[16].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[17].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[18].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[19].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[20].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[21].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[22].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[23].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[24].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[25].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[26].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[27].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[28].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[29].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[30].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[31].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[32].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[33].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[34].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[35].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[36].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[37].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[38].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[39].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[40].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[41].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[42].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[43].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[44].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[45].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[46].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \genblk1[47].conv_execution_dut /multiply_add_dut/mult. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 864.965 ; gain = 498.078
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "addedResult" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "n" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "n" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "i" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedKernel" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "selectedPic" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "doneReg" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 864.965 ; gain = 498.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |conv_result_channel_combination__GB0 |           1|     25437|
+|2     |conv_result_channel_combination__GB1 |           1|     20195|
+|3     |single_layer_conv__GCB0              |           1|     33648|
+|4     |single_layer_conv__GCB1              |           1|      9814|
+|5     |single_layer_conv__GCB2              |           1|     23834|
++------+-------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     21 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 1     
++---Registers : 
+	              336 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 48    
+	                4 Bit    Registers := 48    
+	                1 Bit    Registers := 48    
++---Muxes : 
+	   2 Input    336 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   4 Input     18 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 48    
+	   2 Input      4 Bit        Muxes := 48    
+	   2 Input      1 Bit        Muxes := 98    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module conv_result_channel_combination 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     21 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 1     
++---Registers : 
+	              336 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    336 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   4 Input     18 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__30 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__29 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__28 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__27 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__26 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__25 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__32 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__8 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__9 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__10 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__11 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__12 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__13 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__14 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__15 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__16 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__17 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__18 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__19 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__20 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__21 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__22 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__23 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__24 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__33 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__34 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__35 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__36 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__37 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__38 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__31 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__39 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__40 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__41 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__42 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__43 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__44 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__45 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__46 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution__xdcDup__47 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module conv_execution 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP addedResult1, operation Mode is: (C:0x13b)-A*(B:0x15).
+DSP Report: operator addedResult1 is absorbed into DSP addedResult1.
+DSP Report: operator addedResult2 is absorbed into DSP addedResult1.
+DSP Report: Generating DSP addedResult5, operation Mode is: A*(B:0x12).
+DSP Report: operator addedResult5 is absorbed into DSP addedResult5.
+DSP Report: Generating DSP addedResult5, operation Mode is: A*(B:0x12).
+DSP Report: operator addedResult5 is absorbed into DSP addedResult5.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[7].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[8].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[9].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[10].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[11].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[12].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[13].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[14].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[15].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[16].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[17].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[18].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[19].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[20].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[21].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[22].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[23].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[24].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[25].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[26].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[27].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[28].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[29].conv_execution_dut /convDone_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\genblk1[31].conv_execution_dut /convDone_reg)
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[29].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[28].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[27].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[26].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[25].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[24].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[31].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[7].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[8].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[9].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[10].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[11].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[12].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[13].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[14].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[15].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[16].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[17].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[18].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[19].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[20].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[21].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[22].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/genblk1[23].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_1/genblk1[32].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_1/genblk1[33].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_1/genblk1[34].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_1/genblk1[35].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_1/genblk1[36].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_1/genblk1[37].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_1/genblk1[30].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[6].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[5].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[4].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[3].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[2].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[1].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[0].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[38].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[39].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[40].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[41].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[42].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[43].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[44].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[45].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[46].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_2/genblk1[47].conv_execution_dut/doneReg_reg[0]/Q' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_execution.v:64]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 963.270 ; gain = 596.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++--------------------------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                     | DSP Mapping          | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------------------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|conv_result_channel_combination | (C:0x13b)-A*(B:0x15) | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|conv_result_channel_combination | A*(B:0x12)           | 10     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|conv_result_channel_combination | A*(B:0x12)           | 10     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++--------------------------------+----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v:25]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.srcs/sources_1/new/conv_result_channel_combination.v:25]
+
+Report RTL Partitions: 
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |conv_result_channel_combination__GB0 |           1|      7143|
+|2     |conv_result_channel_combination__GB1 |           1|      3728|
+|3     |single_layer_conv__GCB0              |           1|      6240|
+|4     |single_layer_conv__GCB1              |           1|      1815|
+|5     |single_layer_conv__GCB2              |           1|      4405|
++------+-------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 963.270 ; gain = 596.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 963.270 ; gain = 596.383
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------------------------+------------+----------+
+|      |RTL Partition                        |Replication |Instances |
++------+-------------------------------------+------------+----------+
+|1     |conv_result_channel_combination__GB0 |           1|      7143|
+|2     |conv_result_channel_combination__GB1 |           1|      3728|
+|3     |single_layer_conv__GCB0              |           1|      6240|
+|4     |single_layer_conv__GCB1              |           1|      1815|
+|5     |single_layer_conv__GCB2              |           1|      4405|
++------+-------------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/n_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[335] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[334] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[333] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[332] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[331] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[330] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[329] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[328] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[327] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[326] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[325] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv_result_channel_combination_dut/addedResult_reg[324] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 982.832 ; gain = 615.945
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 982.832 ; gain = 615.945
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 982.832 ; gain = 615.945
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 982.832 ; gain = 615.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 982.832 ; gain = 615.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 982.832 ; gain = 615.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 982.832 ; gain = 615.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |multiplier    |        48|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------------+------+
+|      |Cell           |Count |
++------+---------------+------+
+|1     |multiplier     |     1|
+|2     |multiplier__48 |     1|
+|3     |multiplier__49 |     1|
+|4     |multiplier__50 |     1|
+|5     |multiplier__51 |     1|
+|6     |multiplier__52 |     1|
+|7     |multiplier__53 |     1|
+|8     |multiplier__54 |     1|
+|9     |multiplier__55 |     1|
+|10    |multiplier__56 |     1|
+|11    |multiplier__57 |     1|
+|12    |multiplier__58 |     1|
+|13    |multiplier__59 |     1|
+|14    |multiplier__60 |     1|
+|15    |multiplier__61 |     1|
+|16    |multiplier__62 |     1|
+|17    |multiplier__63 |     1|
+|18    |multiplier__64 |     1|
+|19    |multiplier__65 |     1|
+|20    |multiplier__66 |     1|
+|21    |multiplier__67 |     1|
+|22    |multiplier__68 |     1|
+|23    |multiplier__69 |     1|
+|24    |multiplier__70 |     1|
+|25    |multiplier__71 |     1|
+|26    |multiplier__72 |     1|
+|27    |multiplier__73 |     1|
+|28    |multiplier__74 |     1|
+|29    |multiplier__75 |     1|
+|30    |multiplier__76 |     1|
+|31    |multiplier__77 |     1|
+|32    |multiplier__78 |     1|
+|33    |multiplier__79 |     1|
+|34    |multiplier__80 |     1|
+|35    |multiplier__81 |     1|
+|36    |multiplier__82 |     1|
+|37    |multiplier__83 |     1|
+|38    |multiplier__84 |     1|
+|39    |multiplier__85 |     1|
+|40    |multiplier__86 |     1|
+|41    |multiplier__87 |     1|
+|42    |multiplier__88 |     1|
+|43    |multiplier__89 |     1|
+|44    |multiplier__90 |     1|
+|45    |multiplier__91 |     1|
+|46    |multiplier__92 |     1|
+|47    |multiplier__93 |     1|
+|48    |multiplier__94 |     1|
+|49    |BUFG           |     1|
+|50    |CARRY4         |   384|
+|51    |LUT1           |    48|
+|52    |LUT2           |    16|
+|53    |LUT3           |    48|
+|54    |LUT4           |   288|
+|55    |LUT5           |   864|
+|56    |LUT6           |  1632|
+|57    |FDCE           |  2112|
+|58    |IBUF           |   975|
+|59    |OBUF           |   336|
++------+---------------+------+
+
+Report Instance Areas: 
++------+-----------------------------------+---------------------------+------+
+|      |Instance                           |Module                     |Cells |
++------+-----------------------------------+---------------------------+------+
+|1     |top                                |                           |  7280|
+|2     |  \genblk1[0].conv_execution_dut   |conv_execution__xdcDup__1  |   124|
+|3     |    multiply_add_dut               |multiply_add__xdcDup__1    |    12|
+|4     |  \genblk1[10].conv_execution_dut  |conv_execution__xdcDup__11 |   125|
+|5     |    multiply_add_dut               |multiply_add__xdcDup__11   |    12|
+|6     |  \genblk1[11].conv_execution_dut  |conv_execution__xdcDup__12 |   124|
+|7     |    multiply_add_dut               |multiply_add__xdcDup__12   |    12|
+|8     |  \genblk1[12].conv_execution_dut  |conv_execution__xdcDup__13 |   124|
+|9     |    multiply_add_dut               |multiply_add__xdcDup__13   |    12|
+|10    |  \genblk1[13].conv_execution_dut  |conv_execution__xdcDup__14 |   125|
+|11    |    multiply_add_dut               |multiply_add__xdcDup__14   |    12|
+|12    |  \genblk1[14].conv_execution_dut  |conv_execution__xdcDup__15 |   124|
+|13    |    multiply_add_dut               |multiply_add__xdcDup__15   |    12|
+|14    |  \genblk1[15].conv_execution_dut  |conv_execution__xdcDup__16 |   124|
+|15    |    multiply_add_dut               |multiply_add__xdcDup__16   |    12|
+|16    |  \genblk1[16].conv_execution_dut  |conv_execution__xdcDup__17 |   125|
+|17    |    multiply_add_dut               |multiply_add__xdcDup__17   |    12|
+|18    |  \genblk1[17].conv_execution_dut  |conv_execution__xdcDup__18 |   124|
+|19    |    multiply_add_dut               |multiply_add__xdcDup__18   |    12|
+|20    |  \genblk1[18].conv_execution_dut  |conv_execution__xdcDup__19 |   124|
+|21    |    multiply_add_dut               |multiply_add__xdcDup__19   |    12|
+|22    |  \genblk1[19].conv_execution_dut  |conv_execution__xdcDup__20 |   124|
+|23    |    multiply_add_dut               |multiply_add__xdcDup__20   |    12|
+|24    |  \genblk1[1].conv_execution_dut   |conv_execution__xdcDup__2  |   124|
+|25    |    multiply_add_dut               |multiply_add__xdcDup__2    |    12|
+|26    |  \genblk1[20].conv_execution_dut  |conv_execution__xdcDup__21 |   124|
+|27    |    multiply_add_dut               |multiply_add__xdcDup__21   |    12|
+|28    |  \genblk1[21].conv_execution_dut  |conv_execution__xdcDup__22 |   124|
+|29    |    multiply_add_dut               |multiply_add__xdcDup__22   |    12|
+|30    |  \genblk1[22].conv_execution_dut  |conv_execution__xdcDup__23 |   125|
+|31    |    multiply_add_dut               |multiply_add__xdcDup__23   |    12|
+|32    |  \genblk1[23].conv_execution_dut  |conv_execution__xdcDup__24 |   125|
+|33    |    multiply_add_dut               |multiply_add__xdcDup__24   |    12|
+|34    |  \genblk1[24].conv_execution_dut  |conv_execution__xdcDup__25 |   124|
+|35    |    multiply_add_dut               |multiply_add__xdcDup__25   |    12|
+|36    |  \genblk1[25].conv_execution_dut  |conv_execution__xdcDup__26 |   125|
+|37    |    multiply_add_dut               |multiply_add__xdcDup__26   |    12|
+|38    |  \genblk1[26].conv_execution_dut  |conv_execution__xdcDup__27 |   124|
+|39    |    multiply_add_dut               |multiply_add__xdcDup__27   |    12|
+|40    |  \genblk1[27].conv_execution_dut  |conv_execution__xdcDup__28 |   124|
+|41    |    multiply_add_dut               |multiply_add__xdcDup__28   |    12|
+|42    |  \genblk1[28].conv_execution_dut  |conv_execution__xdcDup__29 |   125|
+|43    |    multiply_add_dut               |multiply_add__xdcDup__29   |    12|
+|44    |  \genblk1[29].conv_execution_dut  |conv_execution__xdcDup__30 |   124|
+|45    |    multiply_add_dut               |multiply_add__xdcDup__30   |    12|
+|46    |  \genblk1[2].conv_execution_dut   |conv_execution__xdcDup__3  |   124|
+|47    |    multiply_add_dut               |multiply_add__xdcDup__3    |    12|
+|48    |  \genblk1[30].conv_execution_dut  |conv_execution__xdcDup__31 |   124|
+|49    |    multiply_add_dut               |multiply_add__xdcDup__31   |    12|
+|50    |  \genblk1[31].conv_execution_dut  |conv_execution__xdcDup__32 |   124|
+|51    |    multiply_add_dut               |multiply_add__xdcDup__32   |    12|
+|52    |  \genblk1[32].conv_execution_dut  |conv_execution__xdcDup__33 |   125|
+|53    |    multiply_add_dut               |multiply_add__xdcDup__33   |    12|
+|54    |  \genblk1[33].conv_execution_dut  |conv_execution__xdcDup__34 |   124|
+|55    |    multiply_add_dut               |multiply_add__xdcDup__34   |    12|
+|56    |  \genblk1[34].conv_execution_dut  |conv_execution__xdcDup__35 |   124|
+|57    |    multiply_add_dut               |multiply_add__xdcDup__35   |    12|
+|58    |  \genblk1[35].conv_execution_dut  |conv_execution__xdcDup__36 |   124|
+|59    |    multiply_add_dut               |multiply_add__xdcDup__36   |    12|
+|60    |  \genblk1[36].conv_execution_dut  |conv_execution__xdcDup__37 |   124|
+|61    |    multiply_add_dut               |multiply_add__xdcDup__37   |    12|
+|62    |  \genblk1[37].conv_execution_dut  |conv_execution__xdcDup__38 |   125|
+|63    |    multiply_add_dut               |multiply_add__xdcDup__38   |    12|
+|64    |  \genblk1[38].conv_execution_dut  |conv_execution__xdcDup__39 |   124|
+|65    |    multiply_add_dut               |multiply_add__xdcDup__39   |    12|
+|66    |  \genblk1[39].conv_execution_dut  |conv_execution__xdcDup__40 |   124|
+|67    |    multiply_add_dut               |multiply_add__xdcDup__40   |    12|
+|68    |  \genblk1[3].conv_execution_dut   |conv_execution__xdcDup__4  |   125|
+|69    |    multiply_add_dut               |multiply_add__xdcDup__4    |    12|
+|70    |  \genblk1[40].conv_execution_dut  |conv_execution__xdcDup__41 |   125|
+|71    |    multiply_add_dut               |multiply_add__xdcDup__41   |    12|
+|72    |  \genblk1[41].conv_execution_dut  |conv_execution__xdcDup__42 |   125|
+|73    |    multiply_add_dut               |multiply_add__xdcDup__42   |    12|
+|74    |  \genblk1[42].conv_execution_dut  |conv_execution__xdcDup__43 |   124|
+|75    |    multiply_add_dut               |multiply_add__xdcDup__43   |    12|
+|76    |  \genblk1[43].conv_execution_dut  |conv_execution__xdcDup__44 |   124|
+|77    |    multiply_add_dut               |multiply_add__xdcDup__44   |    12|
+|78    |  \genblk1[44].conv_execution_dut  |conv_execution__xdcDup__45 |   124|
+|79    |    multiply_add_dut               |multiply_add__xdcDup__45   |    12|
+|80    |  \genblk1[45].conv_execution_dut  |conv_execution__xdcDup__46 |   124|
+|81    |    multiply_add_dut               |multiply_add__xdcDup__46   |    12|
+|82    |  \genblk1[46].conv_execution_dut  |conv_execution__xdcDup__47 |   125|
+|83    |    multiply_add_dut               |multiply_add__xdcDup__47   |    12|
+|84    |  \genblk1[47].conv_execution_dut  |conv_execution             |   125|
+|85    |    multiply_add_dut               |multiply_add               |    12|
+|86    |  \genblk1[4].conv_execution_dut   |conv_execution__xdcDup__5  |   125|
+|87    |    multiply_add_dut               |multiply_add__xdcDup__5    |    12|
+|88    |  \genblk1[5].conv_execution_dut   |conv_execution__xdcDup__6  |   124|
+|89    |    multiply_add_dut               |multiply_add__xdcDup__6    |    12|
+|90    |  \genblk1[6].conv_execution_dut   |conv_execution__xdcDup__7  |   124|
+|91    |    multiply_add_dut               |multiply_add__xdcDup__7    |    12|
+|92    |  \genblk1[7].conv_execution_dut   |conv_execution__xdcDup__8  |   125|
+|93    |    multiply_add_dut               |multiply_add__xdcDup__8    |    12|
+|94    |  \genblk1[8].conv_execution_dut   |conv_execution__xdcDup__9  |   124|
+|95    |    multiply_add_dut               |multiply_add__xdcDup__9    |    12|
+|96    |  \genblk1[9].conv_execution_dut   |conv_execution__xdcDup__10 |   124|
+|97    |    multiply_add_dut               |multiply_add__xdcDup__10   |    12|
++------+-----------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 982.832 ; gain = 615.945
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 144 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 982.832 ; gain = 272.441
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 982.832 ; gain = 615.945
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 384 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 982.832 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+229 Infos, 2 Warnings, 144 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 982.832 ; gain = 627.449
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 982.832 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Xilinx/lwyVerilog/kernel3x3x3/kernel3x3x3.runs/synth_1/single_layer_conv.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file single_layer_conv_utilization_synth.rpt -pb single_layer_conv_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Feb 11 21:57:43 2023...

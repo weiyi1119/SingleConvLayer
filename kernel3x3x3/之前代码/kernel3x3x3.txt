@@ -1,0 +1,159 @@
+module kernel3x3x3(
+    clk,
+    rstn,
+    kernel_w_0_0,
+    kernel_w_0_1,
+    kernel_w_0_2,
+    kernel_w_1_0,
+    kernel_w_1_1,
+    kernel_w_1_2,
+    kernel_w_2_0,
+    kernel_w_2_1,
+    kernel_w_2_2,
+    bias
+//    kernel_data_send,
+//    kernel_data_go,
+//    kernel_data_done
+    );
+
+    parameter div_cnt_dst=6'd49;
+
+    input  wire clk,rstn;
+//    input  wire kernel_data_go;              //卷积核数据kernel_data开始发送标志
+//    output reg kernel_data_done;            //卷积核数据kernel_data发送完成标志
+//    output reg [3:0]kernel_data_send;       //串行发送卷积核数据&偏置kernel_data[0]~kernel_data[8]、kernel_data[9]
+    output reg [3:0]kernel_w_0_0;
+    output reg [3:0]kernel_w_0_1;
+    output reg [3:0]kernel_w_0_2;
+    output reg [3:0]kernel_w_1_0;
+    output reg [3:0]kernel_w_1_1;
+    output reg [3:0]kernel_w_1_2;
+    output reg [3:0]kernel_w_2_0;
+    output reg [3:0]kernel_w_2_1;
+    output reg [3:0]kernel_w_2_2;
+    output reg [3:0]bias;
+    
+    reg[3:0]kernel_data[0:9];              //用寄存器储存的卷积核数据3x3+偏置
+//    reg[5:0]div_cnt;                        //基本时钟
+//    reg[3:0]send_index;                      //给发送的卷积核+偏置数据标号，0~9
+//    reg kernel_data_en;
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            kernel_w_0_0<=4'd0;
+            kernel_w_0_1<=4'd0;
+            kernel_w_0_2<=4'd0;
+            kernel_w_1_0<=4'd0;
+            kernel_w_1_1<=4'd0;
+            kernel_w_1_2<=4'd0;
+            kernel_w_2_0<=4'd0;
+            kernel_w_2_1<=4'd0;
+            kernel_w_2_2<=4'd0;
+            bias        <=4'd0;
+        end
+        else begin
+            kernel_w_0_0<=kernel_data[0];           //给3x3卷积核赋值
+            kernel_w_0_1<=kernel_data[1];
+            kernel_w_0_2<=kernel_data[2];
+            kernel_w_1_0<=kernel_data[3];
+            kernel_w_1_1<=kernel_data[4];
+            kernel_w_1_2<=kernel_data[5];
+            kernel_w_2_0<=kernel_data[6];
+            kernel_w_2_1<=kernel_data[7];
+            kernel_w_2_2<=kernel_data[8];
+            bias        <=kernel_data[9];           //给偏置赋值
+        end
+    end
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            kernel_data[0]<=4'd0;
+            kernel_data[1]<=4'd0;
+            kernel_data[2]<=4'd0;
+            kernel_data[3]<=4'd0;
+            kernel_data[4]<=4'd0;
+            kernel_data[5]<=4'd0;
+            kernel_data[6]<=4'd0;
+            kernel_data[7]<=4'd0;
+            kernel_data[8]<=4'd0;
+            kernel_data[9]<=4'd0;
+        end
+        else begin
+            kernel_data[0]<=4'd0;           //给3x3卷积核赋值
+            kernel_data[1]<=4'd1;
+            kernel_data[2]<=4'd2;
+            kernel_data[3]<=4'd3;
+            kernel_data[4]<=4'd4;
+            kernel_data[5]<=4'd5;
+            kernel_data[6]<=4'd6;
+            kernel_data[7]<=4'd7;
+            kernel_data[8]<=4'd8;
+            kernel_data[9]<=4'd1;           //给偏置赋值
+        end
+    end
+
+
+//    always @(posedge clk or negedge rstn) begin
+//        if (!rstn) begin
+//            kernel_data_en<=0;
+//        end
+//        else if (kernel_data_go) begin
+//            kernel_data_en<=1;
+//        end
+//        else if (kernel_data_done) begin
+//            kernel_data_en<=0;
+//        end
+//    end
+//
+//    always @(posedge clk or negedge rstn) begin
+//        if (!rstn) begin
+//            kernel_data_done<=0;
+//        end
+//        else if (div_cnt==49 && send_index==9) begin
+//            kernel_data_done<=1;
+//        end
+//        else
+//            kernel_data_done<=0;
+//        
+//    end
+//    
+//    always @(posedge clk or negedge rstn) begin//基本时钟
+//        if (!rstn) begin
+//            div_cnt<=0;
+//        end
+//        else if (kernel_data_en) begin
+//            if (div_cnt==div_cnt_dst) begin         //计时1us
+//                div_cnt<=0;
+//            end
+//            else
+//                div_cnt<=div_cnt+1;
+//        end
+//        else
+//            div_cnt<=0;
+//    end
+//
+//    always @(posedge clk or negedge rstn) begin//给发送的卷积核和图片数据标号，0~8
+//        if (!rstn) begin
+//            send_index<=0;
+//        end
+//        else if (kernel_data_en) begin
+//            if (div_cnt==div_cnt_dst) begin
+//                if (send_index==9) begin
+//                    send_index<=0;
+//                end
+//                else
+//                    send_index<=send_index+1;
+//            end
+//        end
+//        else 
+//            send_index<=0;
+//    end
+//
+//    always @(posedge clk or negedge rstn) begin
+//        if (!rstn) begin                    //默认值为0
+//            kernel_data_send<=4'd0;
+//        end
+//        else if (div_cnt==0) begin//设置为div_cnt_dst的话，就会发生错位
+//            kernel_data_send<=kernel_data[send_index];//按顺序发送
+//        end 
+//    end
+endmodule

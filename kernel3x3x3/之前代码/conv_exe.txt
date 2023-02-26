@@ -1,0 +1,175 @@
+module conv_execution(
+    clk,
+    rstn,
+    kernel,
+    picWindow,
+    result
+    );
+    parameter F = 3;
+    parameter FDW = 4;
+    parameter DW = 8;
+    input  wire clk,rstn;
+    input  wire [0:F*F*FDW-1]   kernel;             //输入卷积核
+    input  wire [0:F*F*DW-1]    picWindow;          //输入图像窗口
+    output reg [0:FDW+DW+2*F]   result;             //输出卷积得到的“数值”大小（这个位宽绝对可以满足算出来的结果）
+
+//    reg [0:FDW-1]selectedKernel;
+//    reg [0:DW-1]selectedPic;
+
+    reg [FDW-1:0]conv_kernel[0:F*F-1];                  //存放卷积核
+    reg [DW-1:0]conv_pic[0:F*F-1];                        //存放图片窗口
+    reg [0:FDW+DW+2*F]   resultReg=0;
+    wire [FDW+DW-1:0] prod [0:F*F-1];                   //存放乘积结果
+
+    integer i;
+    reg [10:0] j=0;
+    reg [10:0] r_j=0;
+
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            for (i = 0; i<=F*F-1; i=i+1) begin
+                conv_kernel[i]<=0;
+            end
+        end
+        else begin
+            for (i = 0; i<=F*F-1; i=i+1) begin
+                conv_kernel[i]<=kernel[i*FDW+:FDW];     //给卷积核存储器赋值
+            end
+        end
+    end
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            for (i = 0; i<=F*F-1; i=i+1) begin
+                conv_pic[i]<=0;
+            end
+        end
+        else begin
+            for (i = 0; i<=F*F-1; i=i+1) begin
+                conv_pic[i]<=picWindow[i*DW+:DW];           //给图片窗存储器赋值
+            end
+        end
+    end
+
+    /*相乘再相加*/
+    genvar n;
+
+    generate
+        for (n = 0; n<=F*F-1; n=n+1) begin
+                multiplier mult(
+                    .CLK(clk),
+                    .A(conv_kernel[n]),
+                    .B(conv_pic   [n]),
+                    .P(prod       [n])
+                );
+        end
+    endgenerate
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            r_j<=0;
+        end
+        else
+            r_j<=j;
+    end
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            r_j<=0;
+            j<=0;
+            result<=0;
+        end
+        else if (conv_kernel[0]!=0 &&
+                 conv_kernel[1]!=0 &&
+                 conv_kernel[2]!=0 &&
+                 conv_kernel[3]!=0 &&
+                 conv_kernel[4]!=0 &&
+                 conv_kernel[5]!=0 &&
+                 conv_kernel[6]!=0 &&
+                 conv_kernel[7]!=0 &&
+                 conv_kernel[8]!=0
+                 ) begin
+                    if (r_j==F*F) begin
+                        r_j<=r_j;
+                    end
+                    else begin
+                        result<=result+prod[r_j];
+                        j<=j+1;
+                    end
+        end
+        else
+            j<=0;
+
+        
+            
+    end
+101010101010101010
+100101010101010101
+010110101010101010
+101010010101010101
+010101011010101010
+101010101001010101
+010101010101101010
+101010010101010101
+
+101010101010101010
+101010101010101010
+101010101010101010
+101010101010101010
+010101010101010101
+010101010101010101
+010101010101010101
+010101010101010101
+
+000000000010110010
+000000000010011001
+000000000010110010
+000000000010110111
+000000000011111100
+000000000011100011
+000000000010100010
+000000000010110001
+    
+//    always @(*) begin
+//        resultReg=  prod[0]+
+//                    prod[1]+
+//                    prod[2]+
+//                    prod[3]+
+//                    prod[4]+
+//                    prod[5]+
+//                    prod[6]+
+//                    prod[7]+
+//                    prod[8];
+//    end
+//
+//    always @( *) begin
+//        result=resultReg;
+//    end
+123456
+901234
+789012
+
+345678
+123456
+901234
+
+901234
+789012
+567890
+
+123456
+901234
+789012
+34567812345690123456789034567812345612345690123478901234...
+
+000000110110111000
+000000101111101100
+000001000110010110
+000000110110111000
+000000110010011100
+000001000001110000
+000000101111000000
+000000110010011100
+000000111000100000
+000001000011001000000000101011011000000000111000100000
+endmodule

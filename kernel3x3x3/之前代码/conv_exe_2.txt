@@ -1,0 +1,148 @@
+module conv_execution(
+    clk,
+    rstn,
+    kernel,
+    picWindow,
+    result
+    );
+    parameter F = 3;
+    parameter FDW = 4;
+    parameter DW = 8;
+    input  wire clk,rstn;
+    input  wire [0:F*F*FDW-1]   kernel;             //输入卷积核
+    input  wire [0:F*F*DW-1]    picWindow;          //输入图像窗口
+    output wire [0:FDW+DW+2*F]   result;             //输出卷积得到的“数值”大小（这个位宽绝对可以满足算出来的结果）
+
+    reg [FDW-1:0]conv_kernel[0:8];                  //存放卷积核
+    reg [DW:0]conv_pic[0:8];                        //存放图片窗口
+
+    wire [FDW+DW-1:0] prod [0:8];                   //存放乘积结果
+
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            conv_kernel[0]<=0;
+            conv_kernel[1]<=0;
+            conv_kernel[2]<=0;
+            conv_kernel[3]<=0;
+            conv_kernel[4]<=0;
+            conv_kernel[5]<=0;
+            conv_kernel[6]<=0;
+            conv_kernel[7]<=0;
+            conv_kernel[8]<=0;
+        end
+        else begin
+            conv_kernel[0]<=kernel[0*FDW+:FDW];           //给卷积核存储器赋值
+            conv_kernel[1]<=kernel[1*FDW+:FDW];
+            conv_kernel[2]<=kernel[2*FDW+:FDW];
+            conv_kernel[3]<=kernel[3*FDW+:FDW];
+            conv_kernel[4]<=kernel[4*FDW+:FDW];
+            conv_kernel[5]<=kernel[5*FDW+:FDW];
+            conv_kernel[6]<=kernel[6*FDW+:FDW];
+            conv_kernel[7]<=kernel[7*FDW+:FDW];
+            conv_kernel[8]<=kernel[8*FDW+:FDW];
+        end
+    end
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            conv_pic[0]<=0;
+            conv_pic[1]<=0;
+            conv_pic[2]<=0;
+            conv_pic[3]<=0;
+            conv_pic[4]<=0;
+            conv_pic[5]<=0;
+            conv_pic[6]<=0;
+            conv_pic[7]<=0;
+            conv_pic[8]<=0;
+        end
+        else begin
+            conv_pic[0]<=picWindow[0*DW+:DW];           //给图片窗存储器赋值
+            conv_pic[1]<=picWindow[1*DW+:DW];
+            conv_pic[2]<=picWindow[2*DW+:DW];
+            conv_pic[3]<=picWindow[3*DW+:DW];
+            conv_pic[4]<=picWindow[4*DW+:DW];
+            conv_pic[5]<=picWindow[5*DW+:DW];
+            conv_pic[6]<=picWindow[6*DW+:DW];
+            conv_pic[7]<=picWindow[7*DW+:DW];
+            conv_pic[8]<=picWindow[8*DW+:DW];         
+        end
+    end
+
+    /*相乘再相加*/
+    
+    multiplier multiplier0(
+        .CLK(clk),
+        .A(conv_kernel[0]),
+        .B(conv_pic   [0]),
+        .P(prod       [0])
+    );
+
+    multiplier multiplier1(
+        .CLK(clk),
+        .A(conv_kernel[1]),
+        .B(conv_pic   [1]),
+        .P(prod       [1])
+    );
+
+    multiplier multiplier2(
+        .CLK(clk),
+        .A(conv_kernel[2]),
+        .B(conv_pic   [2]),
+        .P(prod       [2])
+    );
+
+    multiplier multiplier3(
+        .CLK(clk),
+        .A(conv_kernel[3]),
+        .B(conv_pic   [3]),
+        .P(prod       [3])
+    );
+
+    multiplier multiplier4(
+        .CLK(clk),
+        .A(conv_kernel[4]),
+        .B(conv_pic   [4]),
+        .P(prod       [4])
+    );
+
+    multiplier multiplier5(
+        .CLK(clk),
+        .A(conv_kernel[5]),
+        .B(conv_pic   [5]),
+        .P(prod       [5])
+    );
+
+    multiplier multiplier6(
+        .CLK(clk),
+        .A(conv_kernel[6]),
+        .B(conv_pic   [6]),
+        .P(prod       [6])
+    );
+
+    multiplier multiplier7(
+        .CLK(clk),
+        .A(conv_kernel[7]),
+        .B(conv_pic   [7]),
+        .P(prod       [7])
+    );
+
+    multiplier multiplier8(
+        .CLK(clk),
+        .A(conv_kernel[8]),
+        .B(conv_pic   [8]),
+        .P(prod       [8])
+    );
+
+    assign  result =prod[0]+
+                    prod[1]+
+                    prod[2]+
+                    prod[3]+
+                    prod[4]+
+                    prod[5]+
+                    prod[6]+
+                    prod[7]+
+                    prod[8];
+
+
+endmodule

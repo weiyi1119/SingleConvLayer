@@ -1,0 +1,288 @@
+module conv_execution(
+    clk,
+    rstn,
+    kernel_w_0_0,
+    kernel_w_0_1,
+    kernel_w_0_2,
+    kernel_w_1_0,
+    kernel_w_1_1,
+    kernel_w_1_2,
+    kernel_w_2_0,
+    kernel_w_2_1,
+    kernel_w_2_2,
+    bias,
+
+    pic_window_0_0,
+    pic_window_0_1,
+    pic_window_0_2,
+    pic_window_1_0,
+    pic_window_1_1,
+    pic_window_1_2,
+    pic_window_2_0,
+    pic_window_2_1,
+    pic_window_2_2,
+//    pic_data_rsv,
+//    pic_go
+//    conv_data_rsv,
+//    conv_rsv_go,
+    conv_result
+//    conv_rsv_done
+    );
+
+    parameter bps_cnt_dst=6'd49;
+
+    input  wire clk,rstn;
+    input  wire [3:0]kernel_w_0_0;
+    input  wire [3:0]kernel_w_0_1;
+    input  wire [3:0]kernel_w_0_2;
+    input  wire [3:0]kernel_w_1_0;
+    input  wire [3:0]kernel_w_1_1;
+    input  wire [3:0]kernel_w_1_2;
+    input  wire [3:0]kernel_w_2_0;
+    input  wire [3:0]kernel_w_2_1;
+    input  wire [3:0]kernel_w_2_2;
+    input  wire [3:0]bias; 
+
+    input  wire [7:0]pic_window_0_0;
+    input  wire [7:0]pic_window_0_1;
+    input  wire [7:0]pic_window_0_2;
+    input  wire [7:0]pic_window_1_0;
+    input  wire [7:0]pic_window_1_1;
+    input  wire [7:0]pic_window_1_2;
+    input  wire [7:0]pic_window_2_0;
+    input  wire [7:0]pic_window_2_1;
+    input  wire [7:0]pic_window_2_2;
+//    input  wire [7:0]pic_data_rsv;          //接收的每一个像素点的值
+//    input  wire pic_go;                     //开始接收图像，起始信号
+//    input  wire [3:0]conv_data_rsv;         //接收的每一个w和b
+//    input  wire conv_rsv_go;                    //开始接收卷积核内容
+    output wire [15:0]conv_result;           //3*3的kernel对5*5的图像卷积，得到9个数,串行输出
+//    output reg conv_rsv_done;                   //卷积结束信号
+
+//    reg conv_rsv_en;
+    reg [3:0]conv_kernel[0:9];                   //卷积核+偏置
+    reg [7:0]conv_pic[0:8];        //图片窗口
+
+    wire [11:0] prod [0:8];         //存放乘积结果
+//    reg [7:0]pic_window_data_for_conv[0:8]; //用于卷积的图片窗口
+
+//    reg[5:0]bps_cnt;                        //基本时钟
+//    reg[3:0]rsv_index;                      //给接收的卷积核和图片数据标号，0~8
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            conv_kernel[0]<=4'd0;
+            conv_kernel[1]<=4'd0;
+            conv_kernel[2]<=4'd0;
+            conv_kernel[3]<=4'd0;
+            conv_kernel[4]<=4'd0;
+            conv_kernel[5]<=4'd0;
+            conv_kernel[6]<=4'd0;
+            conv_kernel[7]<=4'd0;
+            conv_kernel[8]<=4'd0;
+            conv_kernel[9]<=4'd0;
+        end
+        else begin
+            conv_kernel[0]<=kernel_w_0_0;           //给3x3卷积核赋值
+            conv_kernel[1]<=kernel_w_0_1;
+            conv_kernel[2]<=kernel_w_0_2;
+            conv_kernel[3]<=kernel_w_1_0;
+            conv_kernel[4]<=kernel_w_1_1;
+            conv_kernel[5]<=kernel_w_1_2;
+            conv_kernel[6]<=kernel_w_2_0;
+            conv_kernel[7]<=kernel_w_2_1;
+            conv_kernel[8]<=kernel_w_2_2;
+            conv_kernel[9]<=bias;                   //给偏置赋值
+        end
+    end
+
+    always @(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            conv_pic[0]<=8'd0;
+            conv_pic[1]<=8'd0;
+            conv_pic[2]<=8'd0;
+            conv_pic[3]<=8'd0;
+            conv_pic[4]<=8'd0;
+            conv_pic[5]<=8'd0;
+            conv_pic[6]<=8'd0;
+            conv_pic[7]<=8'd0;
+            conv_pic[8]<=8'd0;
+            conv_pic[9]<=8'd0;
+        end
+        else begin
+            conv_pic[0]<=pic_window_0_0;           //给图片窗赋值
+            conv_pic[1]<=pic_window_0_1;
+            conv_pic[2]<=pic_window_0_2;
+            conv_pic[3]<=pic_window_1_0;
+            conv_pic[4]<=pic_window_1_1;
+            conv_pic[5]<=pic_window_1_2;
+            conv_pic[6]<=pic_window_2_0;
+            conv_pic[7]<=pic_window_2_1;
+            conv_pic[8]<=pic_window_2_2;            
+        end
+    end
+//    always @(posedge clk or negedge rstn) begin
+//        if (!rstn) begin
+//            conv_result<=16'd0;
+//        end
+//        else begin
+//            conv_result<=conv_kernel[0]*conv_pic[0]+
+//                         conv_kernel[1]*conv_pic[1]+
+//                         conv_kernel[2]*conv_pic[2]+
+//                         conv_kernel[3]*conv_pic[3]+
+//                         conv_kernel[4]*conv_pic[4]+
+//                         conv_kernel[5]*conv_pic[5]+
+//                         conv_kernel[6]*conv_pic[6]+
+//                         conv_kernel[7]*conv_pic[7]+
+//                         conv_kernel[8]*conv_pic[8]+
+//                         conv_kernel[9];
+//        end
+//    end
+//    always @(posedge clk or negedge rstn) begin
+//        if (!rstn) begin
+//            conv_result<=16'd0;
+//        end
+//        else begin
+//            conv_result<=prod[0]+
+//                         prod[1]+
+//                         prod[2]+
+//                         prod[3]+
+//                         prod[4]+
+//                         prod[5]+
+//                         prod[6]+
+//                         prod[7]+
+//                         prod[8]+
+//                         conv_kernel[9];
+//        end
+//    end
+    assign  conv_result =prod[0]+
+                         prod[1]+
+                         prod[2]+
+                         prod[3]+
+                         prod[4]+
+                         prod[5]+
+                         prod[6]+
+                         prod[7]+
+                         prod[8]+
+                         conv_kernel[9];
+    
+    multiplier multiplier0(
+        .CLK(clk),
+        .A(conv_kernel[0]),
+        .B(conv_pic   [0]),
+        .P(prod       [0])
+    );
+
+    multiplier multiplier1(
+        .CLK(clk),
+        .A(conv_kernel[1]),
+        .B(conv_pic   [1]),
+        .P(prod       [1])
+    );
+
+    multiplier multiplier2(
+        .CLK(clk),
+        .A(conv_kernel[2]),
+        .B(conv_pic   [2]),
+        .P(prod       [2])
+    );
+
+    multiplier multiplier3(
+        .CLK(clk),
+        .A(conv_kernel[3]),
+        .B(conv_pic   [3]),
+        .P(prod       [3])
+    );
+
+    multiplier multiplier4(
+        .CLK(clk),
+        .A(conv_kernel[4]),
+        .B(conv_pic   [4]),
+        .P(prod       [4])
+    );
+
+    multiplier multiplier5(
+        .CLK(clk),
+        .A(conv_kernel[5]),
+        .B(conv_pic   [5]),
+        .P(prod       [5])
+    );
+
+    multiplier multiplier6(
+        .CLK(clk),
+        .A(conv_kernel[6]),
+        .B(conv_pic   [6]),
+        .P(prod       [6])
+    );
+
+    multiplier multiplier7(
+        .CLK(clk),
+        .A(conv_kernel[7]),
+        .B(conv_pic   [7]),
+        .P(prod       [7])
+    );
+
+    multiplier multiplier8(
+        .CLK(clk),
+        .A(conv_kernel[8]),
+        .B(conv_pic   [8]),
+        .P(prod       [8])
+    );
+
+
+
+//    always @(posedge clk or negedge rstn) begin//基本时钟
+//        if (!rstn) begin
+//            bps_cnt<=0;
+//        end
+//        else if (bps_cnt==bps_cnt_dst) begin         //计时1us
+//            bps_cnt<=0;
+//        end
+//        else
+//            bps_cnt<=bps_cnt+1;
+//    end
+//
+//    always @(posedge clk or negedge rstn) begin//给接收的卷积核和图片数据标号，0~8
+//        if (!rstn) begin
+//            rsv_index<=0;
+//        end
+//        else if (bps_cnt==bps_cnt_dst) begin
+//            if (rsv_index==8) begin
+//                rsv_index<=0;
+//            end
+//            else
+//                rsv_index<=rsv_index+1;
+//        end
+//    end
+//
+//    always @(posedge clk or negedge rstn) begin
+//        if (!rstn) begin
+//            conv_rsv_en<=0;
+//        end
+//        else if (conv_rsv_go) begin
+//            conv_rsv_en<=1;
+//        end
+//        else if (conv_rsv_done) begin
+//            
+//        end
+//    end
+//
+//    
+//    always @(posedge clk or negedge rstn) begin
+//        if (!rstn) begin                    //默认值为0
+//            conv[0]<=4'd0;
+//            conv[1]<=4'd0;
+//            conv[2]<=4'd0;
+//            conv[3]<=4'd0;
+//            conv[4]<=4'd0;
+//            conv[5]<=4'd0;
+//            conv[6]<=4'd0;
+//            conv[7]<=4'd0;
+//            conv[8]<=4'd0;
+//            conv[9]<=4'd0;
+//        end
+//        else if (bps_cnt==bps_cnt_dst/2) begin//采样发送过来的卷积核和偏置
+//            conv[rsv_index]<=conv_data_rsv;
+//        end
+//    end
+endmodule
